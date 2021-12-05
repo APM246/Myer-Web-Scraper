@@ -29,6 +29,7 @@ async function check(url) {
 		const content = await page.content();
 
 		const $ = cheerio.load(content);
+		await browser.close();
 		const result = $('#size-28').attr("disabled");
 
 		// send email or SMS to alert me
