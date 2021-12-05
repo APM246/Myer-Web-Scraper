@@ -1,0 +1,17 @@
+{
+  "name": "myer-kenji",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Arun Muthu",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.10",
+    "puppeteer": "^12.0.1",
+    "twilio": "^3.71.3"
+  }
+}
