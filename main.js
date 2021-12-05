@@ -57,7 +57,7 @@ async function check(url) {
 			body: 'Error occurred, check logs.'
 		});
 		
-		await fs.writeFile('error.log', e, {'flag': 'a'}, (err) => {
+		await fs.writeFile('error.log', e.toString(), {'flag': 'a'}, (err) => {
 			if (err) return console.error(err);
 		});
 		process.exit(0);
