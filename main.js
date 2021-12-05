@@ -24,6 +24,7 @@ async function check(url) {
 	try {
 		const browser = await puppeteer.launch();
 		const page = await browser.newPage();
+		await page.setDefaultNavigationTimeout(0);
 		await page.goto(MYER_URL + url);
 		const content = await page.content();
 
