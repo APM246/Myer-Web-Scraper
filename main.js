@@ -6,8 +6,7 @@ import fs from 'fs'; // write errors to logs
 const MYER_URL = 'https://www.myer.com.au/p/';
 
 // SLUGs of various pants
-const URLs = ['cooper-skinny-suit-trouser-379662130','hemsworth-skinny-suit-trouser-424873540',
-'kenji-formals-affleck-skinny-suit-trouser', 'kenji-formals-elba-skinny-suit-trouser'];
+const URLs = ['cooper-skinny-suit-trouser-379662130','hemsworth-skinny-suit-trouser-424873540'];
 
 // Time delay between web scraping checks to avoid detection or rate limiting issues
 const NUM_MINUTES = 2;
@@ -57,7 +56,7 @@ async function check(url) {
 			body: 'Error occurred, check logs.'
 		});
 		
-		await fs.writeFile('error.log', e.toString(), {'flag': 'a'}, (err) => {
+		await fs.writeFile('error.log', new Date().toUTCString() + '\n\n' + e.toString(), {'flag': 'a'}, (err) => {
 			if (err) return console.error(err);
 		});
 		process.exit(0);
